@@ -6,11 +6,7 @@ A leakage-aware machine learning project that forecasts 12-month Zillow Home Val
 
 The goal is to predict the percentage change in a region's Zillow Home Value Index over the following 12 months.
 
-[
-\text{Appreciation}*{12M} =
-\frac{\text{HomeValue}*{t+12} - \text{HomeValue}*{t}}
-{\text{HomeValue}*{t}} \times 100
-]
+* Target Appreciation 12M = ((Future Home Value{t+12} - Home Value{t}) / Home Value{t}) * 100
 
 This is a regression problem.
 
