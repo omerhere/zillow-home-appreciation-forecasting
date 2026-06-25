@@ -67,6 +67,56 @@ The app retrieves the relevant engineered feature row, applies the saved preproc
 ├── images/
 └── README.md
 ```
+## Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/omerhere/zillow-home-appreciation-forecasting.git
+cd zillow-home-appreciation-forecasting
+```
+
+Create and activate a virtual environment.
+
+### Windows
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+### macOS / Linux
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the Streamlit application:
+
+```bash
+streamlit run app/app.py
+```
+
+The app will open locally in your browser.
+
+## Deployment Artifacts
+
+The `artifacts/` directory contains the files required by the Streamlit demo:
+
+* `preprocessor.joblib` — fitted preprocessing pipeline
+* `xgb_model.json` — trained XGBoost model
+* `demo_test_data.parquet` — lightweight historical demo dataset
+
+## Dataset
+
+The original Zillow dataset is not included because of its size. The notebook expects the source data to be placed locally before running the full training workflow.
 
 ## Tech Stack
 
