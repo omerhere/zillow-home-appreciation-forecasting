@@ -44,6 +44,18 @@ This project instead predicts 12-month appreciation, which is more difficult but
 
 XGBoost was selected because it achieved the strongest validation performance across MAE, RMSE, and R².
 
+## Final Held-Out Test Performance
+
+After model selection on the validation period, the selected XGBoost configuration was trained on all safe data through December 2016 and evaluated once on the untouched 2018–2019 test period.
+
+| Metric | Final Test Result |
+|---|---:|
+| MAE | 2.799 percentage points |
+| RMSE | 3.897 percentage points |
+| R² | -0.013 |
+
+The test-period R² was close to zero, showing that predicting 12-month appreciation remains difficult and is sensitive to changing market conditions. However, MAE improved relative to validation, with an average error of approximately 2.8 percentage points.
+
 ## Streamlit Demonstration
 
 A Streamlit application was built to explore historical forecasts.
@@ -60,13 +72,23 @@ The app retrieves the relevant engineered feature row, applies the saved preproc
 
 ## Project Structure
 
-```text
-├── Zillow_Home_Appreciation_Forecasting.ipynb
-├── app.py
-├── requirements.txt
+├── app/
+│   └── app.py
+├── artifacts/
+│   ├── preprocessor.joblib
+│   ├── xgb_model.json
+│   ├── demo_test_data.parquet
+│   └── README.md
 ├── images/
+│   ├── dashboard-overview.png
+│   ├── dashboard-overview2.png
+│   └── dashboard-overview3.png
+├── notebook/
+│   └── Zillow_ZHVI_Prediction.ipynb
+├── .gitignore
+├── requirements.txt
 └── README.md
-```
+
 ## Run Locally
 
 Clone the repository:
